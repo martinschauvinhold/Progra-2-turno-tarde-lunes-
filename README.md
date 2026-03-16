@@ -28,7 +28,7 @@ Maribel Perez Calle Maira
 * agregar intro
 
 
-*Resumen de Actividades: *
+*Resumen de Actividades:*
 
 * Actividad 1:
 * Actividad 2:
