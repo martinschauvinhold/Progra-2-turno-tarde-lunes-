@@ -12,7 +12,9 @@ Maribel Perez Calle Maira.
 # *Resumen de Actividades:*
 
 * Actividad 1:
-  El cliente necesita un programa en cual se enumere de forma ordenada e irrepetible unos archivos. por lo cual para evitar que se repitan los numero(ID) se propone implementar un sistema de colas que no permita la enumeracion del archivo hasta que se haya hecho la anterior operacion first in first out (FIFO). Por el lado del usuario va a tener los siguiente metodos para manipular la cola:  void inicializarCola();
+  El cliente necesita un programa en cual se enumere de forma ordenada e irrepetible unos archivos. por lo cual para evitar que se repitan los numero(ID) se propone implementar un sistema de colas que no permita la enumeracion del archivo hasta que se haya hecho la anterior operacion first in first out (FIFO). Por el lado del usuario va a tener los siguiente metodos para manipular la cola:
+
+   void inicializarCola();
 
     void acolar(int x);
 
