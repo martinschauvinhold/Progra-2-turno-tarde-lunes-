@@ -49,3 +49,5 @@ Funcionamiento: Realiza una validación lógica comparando la cantidad de elemen
 Contexto de uso: Es la medida de seguridad del usuario. Se debe consultar siempre antes de intentar usar los métodos primero() o desacolar() para evitar errores de ejecución cuando ya no quedan archivos por procesar.
 
 * Actividad 2:
+
+La mejor estratrgia de las 3 seria la primera ya que en esta tenes una variable que apunta a lo ultimo añadido a la pila ya con esto podes tener un idea de como esta conformada esta pila. Comparado con la 2da estrategia que tendrias que mover todo un lugar cada vez que se agrega algo, esto no es optimo si tenes una gran cantidad de datos. y la 3era al no contar con una variable que te indique cual fue el ultimo agregado a la pila puede generar confusiones 
