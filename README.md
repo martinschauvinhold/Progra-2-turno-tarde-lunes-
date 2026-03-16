@@ -2,14 +2,32 @@
 
 ## *Integrantes del grupo:*
 
-Martin Schauvinhold,
-Samuel Franco Salazar,
-Sofia Agustina Moral Pesce,
-Agustín Lee,
-Facundo Larghero,
-Maribel Perez Calle Maira.
+Martin Schauvinhold:
+* agregar intro
+* agregar intro
 
-# *Resumen de Actividades:*
+Samuel Franco Salazar:
+* agregar intro
+* * agregar intro
+
+Sofia Agustina Moral Pesce
+* agregar intro
+* agregar intro
+
+Agustín Lee 
+* agregar intro
+* agregar intro
+
+Facundo Larghero 
+* agregar intro
+* agregar intro
+
+Maribel Perez Calle Maira
+* agregar intro
+* agregar intro
+
+
+## *Resumen de Actividades:*
 
 * Actividad 1:
   El cliente necesita un programa en cual se enumere de forma ordenada e irrepetible unos archivos. por lo cual para evitar que se repitan los numero(ID) se propone implementar un sistema de colas que no permita la enumeracion del archivo hasta que se haya hecho la anterior operacion first in first out (FIFO). Por el lado del usuario va a tener los siguiente metodos para manipular la cola:
