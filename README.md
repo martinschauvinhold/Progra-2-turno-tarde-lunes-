@@ -53,3 +53,9 @@ Contexto de uso: Es la medida de seguridad del usuario. Se debe consultar siempr
 * Actividad 2:
 
 La mejor estratrgia de las 3 seria la primera ya que en esta tenes una variable que apunta a lo ultimo añadido a la pila ya con esto podes tener un idea de como esta conformada esta pila. Comparado con la 2da estrategia que tendrias que mover todo un lugar cada vez que se agrega algo, esto no es optimo si tenes una gran cantidad de datos. y la 3era al no contar con una variable que te indique cual fue el ultimo agregado a la pila puede generar confusiones 
+
+
+Bloque 1: Pilas onsigna: ¿Cómo usás una Pila para que el sistema sepa a qué
+carpeta volver si apretás "Subir un nivel"? 
+
+A la hora de entrar en un directorio en un a computadora esta va registrando con un algoritmo estilo LIFO lo movimientos en los directorios quedando almacenado cuando haces un "push" osea abrir un subdirectorio dentro del directorio, esto almacena la ultima direccion en la cima de la pila y al darle la "flechita" para atras se hace el "pop" que hace que se desapile el de la cima de la pila llevandote a la anterior ubicacion en la que estabas. 
