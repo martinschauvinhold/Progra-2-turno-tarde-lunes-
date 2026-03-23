@@ -1,1 +1,8 @@
 
+Consigna: ¿Qué pasa si intentás Agregar a alguien que ya está enlalista? ¿Cambia el tamaño del conjunto?
+
+Si se intenta agrega a alguien que ya se encuentra en el conjunto, no pasaria nada ya que este no pasaria la verificacion de Pertenece()
+ya que siempre que se intente agregar a algo a un conjunto se debe verficar que este ya no pertenezca, para asi evitar duplplicados.
+
+El flujo seria el siguiente al ejecutar el metodo agregar(conjunto x, elemento b) descandena la consulta pertenece(elemento b a conjunto x?)
+si este no pertenece, se modifica el conjunto y se agrega el elemento. Si este ya pertenece, no se modifica el conjunto y permanece iguai.
