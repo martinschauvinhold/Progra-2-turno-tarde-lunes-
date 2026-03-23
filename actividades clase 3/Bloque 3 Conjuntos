@@ -1,3 +1,13 @@
+Padrón Electoral: Registro de alumnos para votar en el Centro de
+Estudiantes. o Operación Clave: ¿Cómo evitás que un "vivo" vote dos veces usandoPertenece?
+
+Para evitar que un alumno vote 2 veces lo que haces es cada vez que un alumno vote lo insertas dentro de un conjunto llamado AlumnosQueVotaron
+y cada vez que alguien vote usas Pertenece para verficar si esta ya esta en el conjunto o no, si ya esta el conjunto no se modifica, pero si este no esta
+se inserte dentro del conjunto
+
+
+
+
 Consigna: ¿Qué pasa si intentás Agregar a alguien que ya está enlalista? ¿Cambia el tamaño del conjunto?
 
 Si se intenta agrega a alguien que ya se encuentra en el conjunto, no pasaria nada ya que este no pasaria la verificacion de Pertenece()
