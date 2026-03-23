@@ -31,3 +31,6 @@ funciona como primarykey si un alumno que ya se encuentra cursando una carrera o
 el sistema verfica mediante pertenece(alumno al conjunto UADE) si ya pertenece no se modifica ni se crea ubn nuevo id, si no pertence
 se le asigna un legajo nuevo 
 
+Pregunta Técnica: Si llamás a Elegir dos veces seguidas sin llamar aSacar, ¿te devuelve el mismo elemento? (Pista: Es arbitrario, nonecesariamente aleatorio).
+Si no se modifica, el metodo elegir selecciona el elemento que mas "a mano" tenga por ende si no se modifca te va a devolver siempre el mismo
+
