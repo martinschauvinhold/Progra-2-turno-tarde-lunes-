@@ -1,6 +1,0 @@
-Bloque 1: Pilas consigna: ¿Cómo usás una Pila para que el sistema sepa a qué carpeta volver si apretás "Subir un nivel"?
-
-A la hora de entrar en un directorio en un a computadora esta va registrando con un algoritmo estilo LIFO 
-los movimientos en los directorios quedando almacenado cuando haces un "push" osea abrir un subdirectorio dentro del directorio, 
-esto almacena la ultima direccion en la cima de la pila y al darle la "flechita" para atras se hace el "pop" 
-que hace que se desapile el de la cima de la pila llevandote a la anterior ubicacion en la que estabas.
