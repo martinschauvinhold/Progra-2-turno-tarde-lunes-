@@ -6,3 +6,28 @@ ya que siempre que se intente agregar a algo a un conjunto se debe verficar que 
 
 El flujo seria el siguiente al ejecutar el metodo agregar(conjunto x, elemento b) descandena la consulta pertenece(elemento b a conjunto x?)
 si este no pertenece, se modifica el conjunto y se agrega el elemento. Si este ya pertenece, no se modifica el conjunto y permanece iguai.
+
+Filtro de Spam (Blacklist): Un conjunto de palabras como "Crypto", "Ganá", "Premio".
+o Consigna: ¿Cómo verificás si un mail entrante tiene una palabra
+prohibida?
+
+Al recibir una mail, este se descompone en texto y se separa en palabras individuales, una vez que tenes la lista de palabras armada
+se va a ejecutar el metodo pertenece por cada palabra ejemplo pertenece(palabra:homologacion a blacklist(es el conjunto donde vas a tener
+las palabras bloqueadas)) en este caso pasa el filtro y no lo cataloga como spam en otro caso podria pasar esto pertenece(palabra:gana a
+blacklist) esto daria true y el mail se mandaria a spam ya que el conjunto blacklist contiene a ("Crypto", "Ganá", "Premio").
+
+Tags de un Blog de Ingeniería: Un post sobre Java tiene etiquetas
+#Programacion, #Java, #OOP. o Consigna: ¿Por qué usamos un Conjunto y no una Pila para los tags?
+Usamos un Conjunto y no una pila para los tags ya que no tiene sentido que una publicacion tenga 2 tags iguales, en los conjutnos contamos
+ya de por si con los metodos para evitar elementos duplicados mientras que en las pilas no aparte que en la pila solo "ves" el ultimo que entro
+mientras que en el conjunto contemplas todos los elementos de este 
+
+
+Gestión de Legajos: En la base de datos de Ingeniería en Informática, el
+legajo es único. o Consigna: Si un alumno se anota a dos carreras, ¿cómo se asegurael sistema de no duplicar su ID?
+
+Todos los alummnos nuevos a la hora de inscribirse por primera vez a una carrera dentro de la universidad se les otorga un legajo que
+funciona como primarykey si un alumno que ya se encuentra cursando una carrera o ya la termino, pero se quiere anotar a una nueva carrera 
+el sistema verfica mediante pertenece(alumno al conjunto UADE) si ya pertenece no se modifica ni se crea ubn nuevo id, si no pertence
+se le asigna un legajo nuevo 
+
