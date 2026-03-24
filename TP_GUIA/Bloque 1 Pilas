@@ -1,3 +1,112 @@
+
+Historial de Navegación: El botón "Atrás" del Chrome. Si visitás fi.uba.ar, después campus.utn.edu.ar y por último stackoverflow.com. o Consigna: Identificá qué se apila en cada paso y 
+qué sucede (quésedesapila) cuando el usuario aprieta la flechita de "Atrás".
+1. ¿Qué se apila en cada paso?
+Cada vez que hacés clic en un enlace o escribís una dirección nueva, el navegador apila esa página (la guarda en el tope del historial).
+
+Paso 1: Visitás fi.uba.ar.
+
+Se apila: fi.uba.ar
+
+Estado de la Pila: [fi.uba.ar] (Este es el Tope)
+
+Paso 2: Visitás campus.utn.edu.ar.
+
+Se apila: campus.utn.edu.ar
+
+Estado de la Pila: [fi.uba.ar, campus.utn.edu.ar] (Este es el nuevo Tope)
+
+Paso 3: Visitás stackoverflow.com.
+
+Se apila: stackoverflow.com
+
+Estado de la Pila: [fi.uba.ar, campus.utn.edu.ar, stackoverflow.com] (Este es el Tope actual donde estás parado)
+
+2. ¿Qué sucede al apretar "Atrás"?
+Cuando hacés clic en la flechita para volver, el navegador ejecuta la operación Desapilar() para sacar la página actual y 
+mostrarte la que quedó inmediatamente abajo.
+
+Estás viendo el tope actual: stackoverflow.com.
+
+Acción: Apretás "Atrás".
+
+Qué se desapila: Vuela stackoverflow.com.
+
+Qué pasa a ser el nuevo Tope: Al sacar la última, la pila te devuelve campus.utn.edu.ar,0que es la página que 
+pasás a visualizar en la pantalla.
+
+Estado final de la Pila: [fi.uba.ar, campus.utn.edu.ar]
+
+
+Editor de Código (Undo/Deshacer): Estás codeando y borrás una líneapor error. o Consigna: Describí qué estado del código 
+deberías Apilar cada vez que el usuario hace un cambio y cómo recuperás el estado anterior.
+
+Qué se apila: Cada vez que hacés un cambio (escribir una palabra, borrar una línea, pegar un bloque),
+el editor hace una "foto" o captura del estado del documento justo antes de que se aplique esa modificación.
+
+Cómo se recupera (Ctrl + Z): 
+Cuando apretás Deshacer, el editor ejecuta Desapilar(). Saca esa última "foto" guardada en el tope de la pila 
+y reemplaza el texto actual en pantalla con ese estado anterior.
+
+
+Balanceo de Paréntesis: El compilador de Java chequea que no te hayas olvidado de cerrar una llave. 
+o Consigna: En la expresión ( ( a + b ) * c ), ¿en qué momento exacto hacés un Apilar y cuándo comparás para hacer un Desapilar?
+
+Cuándo se hace un Apilar
+El Apilar() ocurre de forma exclusiva cuando el sistema detecta un símbolo de apertura. En la expresión, esto pasa dos veces:
+
+Al leer el primer ( (al inicio de la expresión) -> Ejecutás Apilar().
+
+Al leer el segundo ( (justo antes de la letra 'a') -> Volvés a ejecutar Apilar().
+
+Estado interno: En este punto, la pila tiene dos elementos.
+
+2. Cuándo se Compara y se hace un Desapilar
+El momento de comparar y desapilar ocurre estrictamente cuando el sistema detecta un símbolo de cierre. En tu expresión, también pasa dos veces:
+
+Al leer el primer ) (justo después de la letra 'b'):
+
+Comparación: El compilador se pregunta: "¿La pila está vacía?". Como la pila tiene dos elementos adentro, la respuesta es no. Esto significa que hay un bloque abierto esperando ser cerrado.
+
+Acción: Ejecutás Desapilar().
+
+Estado interno: La pila ahora se queda con un solo elemento.
+
+Al leer el segundo ) (al final de toda la expresión):
+
+Comparación: Se vuelve a preguntar: "¿La pila está vacía?". Como todavía queda un elemento, la respuesta es no.
+
+Acción: Ejecutás Desapilar() para cerrar el bloque general.
+
+Estado interno: La pila queda completamente vacía.
+
+El chequeo final del compilador
+Una vez que se termina de leer todo el texto ( ( a + b ) * c ), el compilador hace una validación final usando el método PilaVacia().
+
+Como apilaste dos veces y desapilaste dos veces en los momentos correctos, la pila quedó vacía (true).
+
+Reversión de Strings: Querés dar vuelta la palabra "ALGORITMOS". o Consigna: Explicá el proceso de meter letra por letra en la Pila y
+cómo quedan al sacarlas.
+
+Proceso de entrada: Vas leyendo "ALGORITMOS" de izquierda a derecha y ejecutás Apilar() por cada letra.
+Apilás 'A'
+Apilás 'L'
+... (sigue el proceso)
+Apilás 'O'
+Apilás 'S' (Este es el nuevo Tope).
+Proceso de salida: Ahora ejecutás Desapilar() en un bucle hasta que la pila esté vacía. Como la pila es LIFO, la última letra en entrar ('S') es la primera en salir.
+Resultado: Al imprimir las letras a medida que salen, el orden será: S - O - M - T - I - R - O - G - L - A.
+
+Pila de Llamadas (Call Stack): Cuando una función llama a otra. o Consigna: Si Main() llama a CalcularPromedio() y esta llama a
+Sumar(), ¿quién está en el Tope() en el momento de la ejecucióndela suma?
+
+Quién está en el Tope(): En el momento exacto en que se está ejecutando la suma, la función Sumar() es la que está en el Tope de la pila de llamadas.
+El estado de la pila (desde el fondo hacia arriba) sería:
+Main() (Base)
+CalcularPromedio()
+Sumar() (Tope actual)
+Por qué funciona así: Cuando Sumar() termina su trabajo, se desapila, y el sistema operativo lee el nuevo tope (CalcularPromedio()) para retomar la ejecución exactamente donde se había quedado.
+
 Bloque 1: Pilas consigna: ¿Cómo usás una Pila para que el sistema sepa a qué carpeta volver si apretás "Subir un nivel"?
 
 A la hora de entrar en un directorio en un a computadora esta va registrando con un algoritmo estilo LIFO 
