@@ -1,4 +1,4 @@
-1 ) Fila del cajero: Nosotros consideramos que se presenta una cola comùn.
+1 ) Fila del cajero: Consideramos que depende del banco, si no hay atención preferencial es cola común FIFO, pero si el banco atiende primero a embarazadas, gente de mayor edad o personas con discapacidad, entonces se presenta una cola de prioridad donde estos clientes tienen mayor valor de prioridad que el resto.
 
 2 ) Impresora del labotorio: Si se asume que los TPs se mandan y llegan exactamente al mismo tiempo, que en la pràctica es casi imposible, consideramos que la impresiòn de los archivos deberìa ser por un atributo de prioridad, siendo la longitud o cantidad de palabras del documento.
 
