@@ -1,0 +1,39 @@
+
+//Puntajes de Torneo de E-Sports: Cada usuario tiene un puntaje
+//máximo.
+public class Main {
+    public static void main(String[] args) {
+        DiccionarioSimpleTDA d = new DiccionarioSimpleEstatico();
+
+        d.InicializarDiccionario();
+
+        d.Agregar("Diego", 100);
+        d.Agregar("Mariano", 200);
+        d.Agregar("Felipe", 300);
+        System.out.println("----Lista de Puntajes:----");
+
+        String[] claves1=d.Claves();
+
+        for (int i=0; i<claves1.length;i++){
+            String claveActual = claves1[i];
+
+            int puntaje = d.Obtener(claveActual);
+            System.out.println("Usuario: "+claveActual + " - Puntaje: " + puntaje);
+        }
+
+        System.out.println("----Actulizar puntajes MAXIMO:----");
+        d.Agregar("Felipe", 350);
+        d.Agregar("Mariano", 250); // actualiza el valor de la clave
+
+
+        String[] claves2=d.Claves();
+
+        for (int i=0; i<claves2.length;i++){
+            String claveActual = claves2[i];
+            int valorActual = d.Obtener(claveActual);
+        }
+    }
+}
+
+            System.out.println("Usuario: "+claveActual + " - Puntaje: " + valorActual);
+        }
