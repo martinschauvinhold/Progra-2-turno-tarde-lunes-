@@ -9,8 +9,8 @@ public class Main {
         c.Agregar(3); // no debe repetirse
         c.Agregar(10);
 
-        System.out.println("Al llamar el Metodo Elejir me devuelve:" + c.Elegir());
-        System.out.println("Al llamar el Metodo Elejir una segunda vez sin modificar el conjunto me devuelve:" + c.Elegir());
+        System.out.println("Al llamar el Metodo Elegir me devuelve:" + c.Elegir());
+        System.out.println("Al llamar el Metodo Elegir una segunda vez sin modificar el conjunto me devuelve:" + c.Elegir());
         System.out.println("LLamar el Metodo elegir dos veces seguidas sin llamar al metodo sacar me devuelve el mismo valor");
     }
 }
