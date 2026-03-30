@@ -3,39 +3,42 @@ import Interface.DiccionarioSimpleTDA;
 
 public class Main {
     public static void main(String[] args) {
-        // 1. Inicialización del TDA para la Agenda
+        // 1. Configuración del Diccionario
         DiccionarioSimpleTDA agenda = new DiccionarioSimpleEstatico();
         agenda.InicializarDiccionario();
 
-        // 2. Modelado de la Agenda: Clave= ID / Valor= Teléfono
-        // Usamos números para representar los nombres/IDs por la firma del TDA (int)
-        agregarContacto(agenda, 101, 1144556677); // Contacto: Martin
-        agregarContacto(agenda, 102, 1199887766); // Contacto: Juan
+    
+
+        System.out.println("--- Cargando Agenda ---");
         
-        // 3. Prueba de Clave Única: Actualizar teléfono de Martin
-        System.out.println("\n--- Actualizando contacto 101 ---");
-        agregarContacto(agenda, 101, 1122334455); // Sobreescribe el valor anterior
+        // . Operaciones: Clave (Nombre) / Valor (Teléfono)
+        agenda.Agregar(Martin, 1144556677);
+        agenda.Agregar(Juan, 1199887766);
+        
+        // 4. Actualización de Valor (Martin cambia de número)
+        // El Diccionario Simple detecta que la clave 'Martin' ya existe y pisa el valor
+        agenda.Agregar(Martin, 1122334455);
 
-        // 4. Mostrar todos los contactos de la agenda
-        mostrarAgenda(agenda);
+        System.out.println("¿Martin está en la agenda?: " + existe(agenda, Martin));
+        System.out.println("¿Juan está en la agenda?: " + existe(agenda, Juan));
 
-        // 5. Eliminar un contacto
-        System.out.println("\n--- Eliminando contacto 102 ---");
-        agenda.Eliminar(102);
-        mostrarAgenda(agenda);
+        // 5. Eliminación de Clave (Nombre)
+        System.out.println("\n--- Eliminando a Juan ---");
+        agenda.Eliminar(Juan);
+
+        // 6. Verificación Final
+        System.out.println("¿Martin sigue en la agenda?: " + existe(agenda, Martin));
+        System.out.println("¿Juan sigue en la agenda?: " + existe(agenda, Juan));
     }
+//ejemplo de output
+--- Cargando Agenda ---
+Contacto: Martin registrado.
+Contacto: Juan registrado.
 
-   
-    public static void agregarContacto(DiccionarioSimpleTDA d, int idNombre, int telefono) {
-        d.Agregar(idNombre, telefono);
-        System.out.println("Contacto procesado: ID " + idNombre + " -> Tel: " + telefono);
-    }
+--- Actualizando teléfono de Martin ---
 
-    public static void mostrarAgenda(DiccionarioSimpleTDA d) {
-        int[] contactos = d.Claves();
-        System.out.println("Listado de la Agenda:");
-        for (int i = 0; i < contactos.length; i++) {
-            System.out.println("ID Alumno: " + contactos[i]);
-        }
-    }
+--- Eliminando a Juan ---
+
+¿Martin sigue en la agenda?: true
+¿Juan sigue en la agenda?: false
 }
