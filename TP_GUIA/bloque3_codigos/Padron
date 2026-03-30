@@ -1,0 +1,50 @@
+import implementaciones.ConjuntoEstatico;
+import interfaces.ConjuntoTDA;
+
+public class Main {
+    public static void main(String[] args) {
+        // 1. Inicialización de los dos conjuntos requeridos
+        ConjuntoTDA padron = new ConjuntoEstatico();
+        ConjuntoTDA yaVotaron = new ConjuntoEstatico();
+        
+        padron.InicializarConjunto();
+        yaVotaron.InicializarConjunto();
+
+        // 2. Carga de alumnos habilitados en el Padrón
+        padron.Agregar(11110);
+        padron.Agregar(11113);
+        padron.Agregar(11117);
+
+        System.out.println("--- Inicio de Jornada Electoral UADE ---");
+
+        // 3. Simulación de votantes utilizando los conjuntos para verificar
+        votar(11113, padron, yaVotaron); // Votación exitosa
+        votar(11113, padron, yaVotaron); // El "vivo": falla porque yaVotaron.Pertenece es true
+        votar(99999, padron, yaVotaron); // Falla: no Pertenece al padron
+        votar(11117, padron, yaVotaron); // Votación exitosa
+        
+        // 4. Verificación final de la urna
+        System.out.println("\n--- Cierre de Mesa ---");
+        System.out.println("¿La urna está vacía?: " + yaVotaron.ConjuntoVacio());
+        System.out.println("Legajo testigo en la urna: " + yaVotaron.Elegir());
+    }
+
+    /**
+     * Método que centraliza la lógica de votación.
+     * Usa el conjunto 'padron' para autorizar y 'yaVotaron' para evitar duplicados.
+     */
+    public static void votar(int legajo, ConjuntoTDA padron, ConjuntoTDA yaVotaron) {
+        System.out.print("\nVerificando legajo " + legajo + "... ");
+
+        if (!padron.Pertenece(legajo)) {
+            System.out.println("RECHAZADO: El alumno no figura en el padrón.");
+        } 
+        else if (yaVotaron.Pertenece(legajo)) {
+            System.out.println("RECHAZADO: Intento de fraude. Ya emitió su voto.");
+        } 
+        else {
+            yaVotaron.Agregar(legajo);
+            System.out.println("ÉXITO: Voto registrado en el conjunto yaVotaron.");
+        }
+    }
+}
