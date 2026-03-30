@@ -1,0 +1,25 @@
+// 2. DICCIONARIO DE SINÓNIMOS
+public class GestorSinonimos {
+    DiccionarioMultipleTDA diccionario;
+
+    public GestorSinonimos(DiccionarioMultipleTDA dicc) {
+        this.diccionario = dicc;
+        this.diccionario.InicializarDiccionario();
+    }
+
+    // Clave: [Palabra] / Valor: [Conjunto de Sinónimos]
+    public void agregarSinonimo(String palabra, String sinonimo) {
+        // Operación Agregar del Diccionario Múltiple
+        diccionario.Agregar(palabra, sinonimo); 
+    }
+
+    public ConjuntoTDA obtenerSinonimos(String palabra) {
+        // Operación Recuperar para obtener el conjunto de valores
+        return diccionario.Recuperar(palabra); 
+    }
+    
+    public void eliminarUnSinonimo(String palabra, String sinonimo) {
+        // Operación EliminarValor del Diccionario Múltiple
+        diccionario.EliminarValor(palabra, sinonimo);
+    }
+}
