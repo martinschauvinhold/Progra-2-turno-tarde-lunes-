@@ -1,0 +1,39 @@
+Consigna: Traductor de Idiomas: La palabra "Bank" puede ser "Banco" o "Orilla"
+      Tda sugerido: Justificá si usarías simple o múltiple
+
+Respuesta: Elegiría el Diccionario Múltiple, esto debido a que existen Palabras con mas de un significado por lo tanto el uso de un diccionario simple no
+abarcaría todos los valores necesarios.
+
+//Diccionario Simple//
+public class MainSimple {
+    public static void main(String[] args) {
+
+        DiccionarioSimple agenda = new DiccionarioSimple();
+
+        agenda.InicializarDiccionario();
+
+        // Agregar contactos
+        agenda.Agregar("Bank", Banco);
+
+        // Mostrar datos
+        System.out.println("Significado de Bank" + agenda.Recuperar("Bank"));
+    }
+}
+
+//Diccionario Múltiple//
+public class MainMultiple {
+    public static void main(String[] args) {
+
+        DiccionarioMultiple agenda = new DiccionarioMultiple();
+
+        agenda.InicializarDiccionario();
+
+        // Agregar contactos
+        agenda.Agregar("Bank", Banco);
+        agenda.Agregar("Bank", Orila);
+
+        // Mostrar datos
+        System.out.println("Significados de la palabra Bank" + agenda.Recuperar("Bank"));
+
+    }
+}
