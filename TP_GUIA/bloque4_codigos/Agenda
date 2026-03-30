@@ -1,0 +1,41 @@
+import Implementacion.DiccionarioSimpleEstatico;
+import Interface.DiccionarioSimpleTDA;
+
+public class Main {
+    public static void main(String[] args) {
+        // 1. Inicialización del TDA para la Agenda
+        DiccionarioSimpleTDA agenda = new DiccionarioSimpleEstatico();
+        agenda.InicializarDiccionario();
+
+        // 2. Modelado de la Agenda: Clave= ID / Valor= Teléfono
+        // Usamos números para representar los nombres/IDs por la firma del TDA (int)
+        agregarContacto(agenda, 101, 1144556677); // Contacto: Martin
+        agregarContacto(agenda, 102, 1199887766); // Contacto: Juan
+        
+        // 3. Prueba de Clave Única: Actualizar teléfono de Martin
+        System.out.println("\n--- Actualizando contacto 101 ---");
+        agregarContacto(agenda, 101, 1122334455); // Sobreescribe el valor anterior
+
+        // 4. Mostrar todos los contactos de la agenda
+        mostrarAgenda(agenda);
+
+        // 5. Eliminar un contacto
+        System.out.println("\n--- Eliminando contacto 102 ---");
+        agenda.Eliminar(102);
+        mostrarAgenda(agenda);
+    }
+
+   
+    public static void agregarContacto(DiccionarioSimpleTDA d, int idNombre, int telefono) {
+        d.Agregar(idNombre, telefono);
+        System.out.println("Contacto procesado: ID " + idNombre + " -> Tel: " + telefono);
+    }
+
+    public static void mostrarAgenda(DiccionarioSimpleTDA d) {
+        int[] contactos = d.Claves();
+        System.out.println("Listado de la Agenda:");
+        for (int i = 0; i < contactos.length; i++) {
+            System.out.println("ID Alumno: " + contactos[i]);
+        }
+    }
+}
