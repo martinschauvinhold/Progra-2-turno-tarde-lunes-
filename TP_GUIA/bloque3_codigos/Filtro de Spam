@@ -1,0 +1,16 @@
+// 1. FILTRO DE SPAM
+public class FiltroSpam {
+    
+    // Verificamos si el mail tiene una palabra prohibida
+    public static boolean contieneSpam(String correo, ConjuntoTDA blacklist) {
+        String[] palabras = correo.split(" ");
+        
+        for (String palabra : palabras) {
+            // Operación Pertenece para verificar si la palabra está en el conjunto
+            if (blacklist.Pertenece(palabra)) { 
+                return true; 
+            }
+        }
+        return false;
+    }
+}
