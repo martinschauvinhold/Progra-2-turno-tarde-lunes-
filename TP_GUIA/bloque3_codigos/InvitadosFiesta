@@ -1,0 +1,68 @@
+Iniciamos el conjunto con los parámetros de:
+*  NumeroDeInvitado para llevar un orden numérico de los invitados que van ingresando a la fiesta
+*  Cantidad para conocer la cantidad total de Invitados
+*  Asistio como Booleano para conocer si de ese conjunto de invitados cuáles estaban presentes en la fiesta
+*  NombreDelInvitado para tener registro del nombre del invitado
+
+Se inicia el conjunto, verifica si el número de invitado no esta duplicado, Se agrega el invitado al registro de la fiesta y marca como asistio.
+
+//Código://
+
+package Implementacion;
+
+import Interface.ConjuntoTDA;
+
+public class ConjuntoEstatico implements ConjuntoTDA {
+
+    private static final int MAX = 100;
+    private int[] NumeroDeInvitado;
+    private int cantidad;
+    private boolean[] Asistio;
+    private String[] NombreDelInvitado;
+
+    @Override
+    public void InicializarConjunto() {
+        NumeroDeInvitado = new int[MAX];
+        Asistio = new boolean[MAX];
+        NombreDelInvitado = new String[MAX];
+        cantidad = 0;
+    }
+
+    @Override
+    public boolean Pertenece(int numero) {
+        int i = 0;
+
+        while (i < cantidad) {
+            if (NumeroDeInvitado[i] == numero) {
+                return true;
+            }
+            i++;
+        }
+        return false;
+    }
+    @Override
+    public void Agregar(int numero, String nombre) {
+        if (cantidad < MAX) {
+            NumeroDeInvitado[cantidad] = numero;
+            NombreDelInvitado[cantidad] = nombre;
+            Asistio[cantidad] = false;
+            cantidad++;
+        }
+    }
+
+    @Override
+    public void MarcarAsistencia(int numero) {
+        int i = 0;
+
+        while (i < cantidad && NumeroDeInvitado[i] != numero) {
+            i++;
+        }
+
+        if (i < cantidad) {
+            Asistio[i] = true;
+            System.out.println("El invitado " + NombreDelInvitado[i] + " asistió.");
+        } else {
+            System.out.println("El invitado no existe.");
+        }
+    }
+}
