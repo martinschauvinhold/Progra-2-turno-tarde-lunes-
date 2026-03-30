@@ -1,0 +1,28 @@
+public class Main {
+    public static void main(String[] args) {
+        ConjuntoTDA c = new ConjuntoEstatico();
+        ConjuntoTDA d= new ConjuntoEstatico();
+        c.InicializarConjunto();
+        d.InicializarConjunto();
+        System.out.println("¿Conjunto vacío en Informatica?: " + c.ConjuntoVacio());
+        System.out.println("¿Conjunto vacío otra carrera?: " + d.ConjuntoVacio());
+        c.Agregar(11113);
+        c.Agregar(11117);
+        c.Agregar(11113); // no debe repetirse
+        c.Agregar(11110);
+        d.Agregar(11112);
+
+        System.out.println("¿Existe el legajo :11113 en informatica?: " + c.Pertenece(11113));
+        System.out.println("¿Existe el legajo :11115 en informatica?: " + c.Pertenece(11115));
+        System.out.println("¿Existe el legajo :11113 en carrera2?: " + d.Pertenece(11115));
+
+
+        c.Sacar(11117);
+        System.out.println("¿Existe el legajo :11117 en informatica luego de sacarlo?: " + c.Pertenece(11117));
+
+        c.Sacar(11113);
+        System.out.println("¿Pertenece el legajo :11113 en carrera2 luego de sacarlo?: " + d.Pertenece(11113));
+
+        System.out.println("¿No existen inscripto en carrera2?: " + d.ConjuntoVacio());
+    }
+}
