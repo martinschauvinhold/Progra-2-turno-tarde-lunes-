@@ -7,6 +7,33 @@ Iniciamos el conjunto con los parámetros de:
 Se inicia el conjunto, verifica si el número de invitado no esta duplicado, Se agrega el invitado al registro de la fiesta y marca como asistio.
 
 //Código://
+package Implementacion;
+
+public class Main {
+    public static void main(String[] args) {
+
+        ConjuntoEstatico fiesta = new ConjuntoEstatico();
+
+        // Inicializar
+        fiesta.InicializarConjunto();
+
+        // Agregar invitados
+        fiesta.Agregar(1, "Juan");
+        fiesta.Agregar(2, "Maria");
+        fiesta.Agregar(3, "Pedro");
+
+        // Verificar si pertenece
+        System.out.println("¿Invitado 2 existe? " + fiesta.Pertenece(2));
+        System.out.println("¿Invitado 5 existe? " + fiesta.Pertenece(5));
+
+        // Marcar asistencia
+        fiesta.MarcarAsistencia(2); // Maria
+        fiesta.MarcarAsistencia(3); // Pedro
+
+        // Intentar marcar uno que no existe
+        fiesta.MarcarAsistencia(10);
+    }
+}
 
 package Implementacion;
 
@@ -66,3 +93,4 @@ public class ConjuntoEstatico implements ConjuntoTDA {
         }
     }
 }
+
