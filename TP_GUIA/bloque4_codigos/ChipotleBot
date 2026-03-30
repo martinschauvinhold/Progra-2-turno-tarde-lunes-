@@ -1,0 +1,13 @@
+public class ChipotleBot {
+    public static boolean registrarCaso(DiccionarioSimpleTDA bot, int ordenId, String script) {
+        if (bot.Recuperar(ordenId) == null) { 
+            bot.Agregar(ordenId, script);
+            return true;
+        } return false;
+    }   
+
+    public static String resolverCaso(DiccionarioSimpleTDA bot, int ordenId) {
+        String script = bot.Recuperar(ordenId);
+        return (script != null) ? script : "Orden no encontrada";
+    }
+}

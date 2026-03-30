@@ -1,0 +1,8 @@
+public class TagsBlog {
+    public static boolean agregarTag(ConjuntoTDA tags, String nuevoTag) {
+        if (!tags.Pertenece(nuevoTag)) {
+            tags.Agregar(nuevoTag);
+            return true; 
+        } return false; 
+    }
+}
