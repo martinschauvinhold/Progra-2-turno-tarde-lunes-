@@ -1,0 +1,24 @@
+
+public class Alumno {
+   
+        DiccionarioMultipleTDA diccionario;
+        
+        
+        public Alumno (DiccionarioMultipleTDA diccionario){
+            this.diccionario.InicializarDiccionario();
+        }
+        
+        public void agregarMateria( Int legajo, String materia){
+            
+            diccionario.Agregar(legajo ,materia);
+        }
+        
+        public ConjuntoTDA VerMaterias(String legajo){
+            return diccionario.Recuperar(legajo, materia);
+            
+            
+        }
+        
+
+    }
+}
