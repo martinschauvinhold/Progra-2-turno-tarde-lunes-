@@ -1,0 +1,30 @@
+public class Main {
+    public static void main(String[] args) {
+        DiccionarioSimpleTDA dns = new DiccionarioSimpleEstatico();
+        dns.InicializarDiccionario();
+
+        // Modelado: Clave (Dominio) / Valor (IP)
+    
+
+        // IPs simuladas como enteros (quitando los puntos)
+        dns.Agregar(google, 142250190); 
+        dns.Agregar(uade, 200123456);
+        dns.Agregar(Facebook, 157240015);
+
+        dns.Eliminar(Facebook);
+        mostrarTablaDNS(dns);
+
+        // Si la IP de google cambia, el Diccionario Simple la actualiza
+        dns.Agregar(google, 142250999); 
+
+        System.out.println("DNS Inicializado y cargado.");
+        imprimirDNS(dns);
+    }
+
+    public static void imprimirDNS(DiccionarioSimpleTDA d) {
+        int[] dominios = d.Claves();
+        for (int i = 0; i < dominios.length; i++) {
+            System.out.println("Dominio ID: " + dominios[i]);
+        }
+    }
+}
