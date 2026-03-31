@@ -1,0 +1,26 @@
+{
+    public static void main(String[] args) {
+        ColaPrioridadTDA ColaPacientes= new ColaPrioridadDA();
+        PilaTDA PilaToto = new PilaTF();
+        PilaTDA PilaLuna= newPilaTF();
+        PilaTDA PilaJavier= newPilaTF();
+
+        ColaPacientes.InicializarCola();
+
+
+        ColaPacientes.AcolarPrioridad(Javier,10);
+        ColaPacientes.AcolarPrioridad(Luna,100);
+        ColaPacientes.AcolarPrioridad(Toto,1);
+
+        PilaToto.InicializarPila();
+        PilaLuna.InicializarPila();
+        PilaJavier.InicializarPila();
+
+        PilaToto.Apilar("Tuvo Mononucleosis");
+        PilaToto.Apilar("Tuvo GripeA");
+        PilaToto.Apilar("Contrajo lession occular menor");
+        
+      
+
+        }
+    }
