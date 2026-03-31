@@ -1,0 +1,48 @@
+
+public class metodo {
+    public metodo(){
+
+        DiccionarioMultipleTDA d = new DiccionarioMultipleEstatico();
+        d.InicializarDiccionario();
+        d.Agregar(12,"Algo");
+        d.Agregar(12,"Recurcion");
+        d.Agregar(45,"Recurcion");
+        d.Agregar(38,"algo");
+        d.Agregar(38,"algo");
+        d.Agregar(38,"Recurcion");
+
+
+
+        String[] lineasA=d.Recuperar(12);
+        String[] lineasB=d.Recuperar(12);
+        String[] lineasC=d.Recuperar(12);
+        
+
+       boolean palabraencontrada= Buscarpalabra(lineasA, "Recurcion");
+        boolean palabraencontrada= Buscarpalabra(lineasB, "Recurcion");
+        boolean palabraencontrada= Buscarpalabra(lineasC, "Recurcion");
+     
+       
+
+
+    }
+   boolean Buscarpalabra(String[] linea,String palabra ){
+     
+
+        for(int i = 0; i < linea.length; i++) {
+            if(linea[i]==palabra){
+                System.out.println("Se encontro ls palabra" + palabra);
+                return true;
+            }
+
+
+
+
+
+
+
+        }
+
+
+   return  false;}
+}
