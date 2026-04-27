@@ -2,7 +2,7 @@ public class turno {
     public static int turnoJusto(ColaPrioridadTDA cp){
         ColaPrioridadTDA aux1=new ColaPrioridadDinamica();  //p1
         ColaPrioridadTDA aux2=new ColaPrioridadDinamica();//p2
-        int count = 1;
+        int count = 0;
         aux1.InicializarColaPrioridad();
         aux2.InicializarColaPrioridad();
         while (!cp.ColaVacia() && cp.Prioridad() == 2) {
