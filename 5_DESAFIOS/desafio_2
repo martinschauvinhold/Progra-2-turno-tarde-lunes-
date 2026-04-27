@@ -1,0 +1,26 @@
+public class turno {
+    public static int turnoJusto(ColaPrioridadTDA cp){
+        ColaPrioridadTDA aux1=new ColaPrioridadDinamica();  //p1
+        ColaPrioridadTDA aux2=new ColaPrioridadDinamica();//p2
+        int count = 1;
+        aux1.InicializarColaPrioridad();
+        aux2.InicializarColaPrioridad();
+        while (!cp.ColaVacia() && cp.Prioridad() == 2) {
+            aux2.AcolarPrioridad(cp.Primero(), 2);
+            cp.Desacolar();
+        }
+        while (!cp.ColaVacia() && cp.Prioridad() == 1) {
+            aux1.AcolarPrioridad(cp.Primero(), 1);
+            cp.Desacolar();
+            count++;
+        }
+        while (!aux1.ColaVacia()) {
+            cp.AcolarPrioridad(aux1.Primero(), 1);
+            aux1.Desacolar();
+        }
+        while (!aux2.ColaVacia()) {
+            cp.AcolarPrioridad(aux2.Primero(), 2);
+            aux2.Desacolar();
+        }
+        return count;
+    }
