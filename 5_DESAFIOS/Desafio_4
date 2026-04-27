@@ -1,0 +1,39 @@
+import java.util.HashSet;
+import java.util.Set;
+
+public class ConjuntoDinamico {
+
+    public static <T> Set<T> diferenciaSimetrica(Set<T> a, Set<T> b) {
+        Set<T> resultado = new HashSet<>();
+
+        for (T elementoA : a) {
+            if (!b.contains(elementoA)) {
+                resultado.add(elementoA);
+            }
+        }
+        
+        for (T elementoB : b) {
+            if (!a.contains(elementoB)) {
+                resultado.add(elementoB);
+            }
+        }
+
+        return resultado;
+    }
+
+    public static void main(String[] args) {
+        Set<Integer> conjuntoA = new HashSet<>();
+        conjuntoA.add(1);
+        conjuntoA.add(2);
+        conjuntoA.add(3);
+
+        Set<Integer> conjuntoB = new HashSet<>();
+        conjuntoB.add(3);
+        conjuntoB.add(4);
+        conjuntoB.add(5);
+
+        Set<Integer> resultado = diferenciaSimetrica(conjuntoA, conjuntoB);
+        
+        System.out.println("Diferencia Simétrica (A △ B): " + resultado); 
+    }
+}
